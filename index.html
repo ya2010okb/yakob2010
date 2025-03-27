@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تعلم الحروف بطريقة السهلة </title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* ✅ استيراد خط Marhey */
+        @import url('https://fonts.googleapis.com/css2?family=Marhey:wght@300;400;700&display=swap');
+
+        body {
+            direction: rtl;
+            text-align: right;
+            font-family: "Marhey", sans-serif;
+            background-color: #002a43;
+            color: white;
+        }
+
+        .welcome-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 10vw;
+            font-weight: bold;
+            text-shadow: 0 0 20px #fff, 0 0 40px #fff;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            z-index: 1000;
+            animation: growText 1.5s ease-in-out forwards;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .welcome-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 255, 0.75), rgba(255, 0, 0, 0.75));
+            z-index: 999;
+            transition: opacity 1s ease-in-out;
+        }
+
+        @keyframes growText {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .welcome-overlay {
+                font-size: 15vw;
+            }
+
+            .welcome-background {
+                background: linear-gradient(45deg, rgba(0, 0, 255, 0.6), rgba(255, 0, 0, 0.6));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-background" id="welcome-bg"></div>
+    <div class="welcome-overlay" id="welcome">مرحبًا بكم!</div>
+
+    <header>
+        <img src="11zon_cropped (1).png" alt="شعار يعقوب عمارة" />
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="#aboutMe">تعرف عني اكثر</a></li>
+                <li><a href="#contactMe">تواصل معي</a></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <hr />
+    <section class="hero">
+        <div class="heroSub">
+            <h1 class="name">أهلا بكم </h1>
+            <h1 class="title">هيا نتعلم الحروف بطريقة ممتعة وسهلة! 🎉 </h1>
+    
+            <div class="heroBtns">
+
+                <a class="start-btn" href="http://127.0.0.1:5501/" target="_blank">لنبدأ</a>
+            </div>
+        </div>
+    
+        <img src="pngegg (2) (1).png" alt="صورة بطل" class="heroImg" />
+    </section>
+    <section class="aboutMe" id="aboutMe">
+        <img src="pngegg (1).png" alt="صورة عني" class="aboutMeImg" />
+        
+        <div class="textContainer">
+            <div class="textTitle">
+                <h1 class="aboutName">معلومات عني  </h1>
+            </div>
+    
+            <p class="aboutMePar">
+                اسمي يعقوب، عمري 16 عامًا وأعيش في الجزائر. لدي شغف كبير بالبرمجة وأحب تعلم التقنيات الجديدة. منذ صغري، كنت مفتونًا بكيفية عمل البرمجيات وكيفية حلها للمشاكل الحقيقية.
+                أقضي الكثير من وقتي في البرمجة، والتجربة مع لغات البرمجة المختلفة، وبناء المشاريع. هدفي هو أن أصبح مهندس برمجيات ماهرًا وأطور تطبيقات مبتكرة. 
+                لدي أيضًا اهتمام كبير باللغة الإنجليزية لأنها تساعدني على استكشاف المجتمع التقني العالمي. كل يوم، أسعى لتحسين مهاراتي ودفع حدودي في عالم البرمجة.
+            </p>
+        </div>
+    </section>
+    <section class="contactContainer" id="contactMe">
+        <div class="contactTitle">
+            <h1 class="aboutName">تواصل معي</h1>
+
+        </div>
+    
+        <div class="contact">
+            <div class="emailAndPhone">
+                <img src="5.png" alt="أيقونة البريد الإلكتروني" />
+                <a href="mailto:ya2010kobb@gmail.com">
+                    <h3>ya2010kobb@gmail.com</h3>
+                </a>
+            </div>
+        </div>
+        <div class="socialMedia">
+            <a href="https://www.youtube.com/channel/UCJ0Q3oZJq8OPLpJbgLYoCRQ" target="_blank">
+                <img src="png-clipart-united-states-youtube-logo-youtube-play-button-youtube-logo-angle-rectangle (1).png" alt="قناتي على يوتيوب" />
+            </a>
+        </div>
+    </section>
+    <hr />
+<footer>
+    <p>تم بناء هذا الموقع بواسطة يعقوب، وآمل أن يعجبكم.</p>
+</footer>
+
+<script>
+    window.onload = function() {
+        setTimeout(function() {
+            var welcomeScreen = document.getElementById("welcome");
+            var welcomeBg = document.getElementById("welcome-bg");
+            if (welcomeScreen && welcomeBg) {
+                welcomeScreen.style.opacity = "0";
+                welcomeBg.style.opacity = "0";
+                setTimeout(function() {
+                    welcomeScreen.style.display = "none";
+                    welcomeBg.style.display = "none";
+                }, 1000);
+            }
+        }, 3000);
+    };
+    
+</script>
+
+</body>
+</html>
